@@ -1,4 +1,4 @@
-# talkjs
+# TalkJS Website — features
 
 ## Build Setup
 
@@ -18,4 +18,3 @@ $ yarn generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
-# talkjs-website

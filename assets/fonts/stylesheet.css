@@ -1,0 +1,48 @@
+@font-face {
+  font-family: 'Freight Sans Pro';
+  src: url('FreightSansProBold-Regular.eot');
+  src: local('FreightSans Pro Bold'), local('FreightSansProBold-Regular'),
+    url('FreightSansProBold-Regular.eot?#iefix') format('embedded-opentype'),
+    url('FreightSansProBold-Regular.woff2') format('woff2'),
+    url('FreightSansProBold-Regular.woff') format('woff'),
+    url('FreightSansProBold-Regular.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Freight Sans Pro';
+  src: url('FreightSansProMedium-Italic.eot');
+  src: local('FreightSans Pro Medium Italic'),
+    local('FreightSansProMedium-Italic'),
+    url('FreightSansProMedium-Italic.eot?#iefix') format('embedded-opentype'),
+    url('FreightSansProMedium-Italic.woff2') format('woff2'),
+    url('FreightSansProMedium-Italic.woff') format('woff'),
+    url('FreightSansProMedium-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Freight Sans Pro';
+  src: url('FreightSansProBold-Italic.eot');
+  src: local('FreightSans Pro Bold Italic'), local('FreightSansProBold-Italic'),
+    url('FreightSansProBold-Italic.eot?#iefix') format('embedded-opentype'),
+    url('FreightSansProBold-Italic.woff2') format('woff2'),
+    url('FreightSansProBold-Italic.woff') format('woff'),
+    url('FreightSansProBold-Italic.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Freight Sans Pro';
+  src: url('FreightSansProMedium-Regular.eot');
+  src: local('FreightSans Pro Medium'), local('FreightSansProMedium-Regular'),
+    url('FreightSansProMedium-Regular.eot?#iefix') format('embedded-opentype'),
+    url('FreightSansProMedium-Regular.woff2') format('woff2'),
+    url('FreightSansProMedium-Regular.woff') format('woff'),
+    url('FreightSansProMedium-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
