@@ -19,28 +19,90 @@
         </div>
       </Container>
     </div>
-    <div>
-      <div class="bg-primary-dark pt-24 pb-64">
-        <div class="max-w-5xl mx-auto w-full">
-          <p class="font-bold text-secondary mb-2">How it helps</p>
-          <h2 class="text-white text-4xl max-w-md leading-tight">
-            TalkJS has everything you need in a chat app, out of the box.
-          </h2>
-        </div>
-      </div>
-      <div class="max-w-5xl mx-auto -mt-56">
-        <div class="w-full p-8 rounded-lg bg-white max-w-3xl">
-          <div class="flex items-center">
-            <svg-icon name="albums" />
-          </div>
-        </div>
-      </div>
-    </div>
+    <FeaturesSection
+      pre-title="How it works"
+      title="TalkJS has everything you need in a chat app, out of the box."
+      :features-large="featuresLarge"
+      :features-small="featuresSmall"
+    />
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      featuresLarge: [
+        {
+          icon: 'chat-bubbles',
+          label: 'Real-time messaging',
+        },
+        {
+          icon: 'chatbox-ellipsis',
+          label: 'Chat pop-up',
+        },
+        {
+          icon: 'people',
+          label: 'Channels, groups & topics',
+        },
+        {
+          icon: 'mail-unread',
+          label: 'Email & SMS fallback',
+        },
+        {
+          icon: 'albums',
+          label: 'Full conversation history',
+        },
+        {
+          icon: 'palette',
+          label: 'Customizable design',
+        },
+      ],
+      featuresSmall: [
+        {
+          icon: 'phone',
+          label: 'Responsive cross-browser UX',
+        },
+        {
+          icon: 'time',
+          label: 'Activity history & dashboard',
+        },
+        {
+          icon: 'language',
+          label: 'Multi-Language User Interface',
+        },
+        {
+          icon: 'checkmark-done-all',
+          label: 'Read indicators',
+        },
+        {
+          icon: 'code',
+          label: 'Developer-friendly API',
+        },
+        {
+          icon: 'ellipsis',
+          label: 'Typing indicators',
+        },
+        {
+          icon: 'notification',
+          label: 'Desktop notifications',
+        },
+        {
+          icon: 'person',
+          label: 'Suppress contact information',
+        },
+        {
+          icon: 'chat-bubbles',
+          label: 'Unread messages badge',
+        },
+        {
+          icon: 'chatbox-ellipsis',
+          label: 'Widget',
+        },
+      ],
+    }
+  },
+}
 </script>
 
 <style>
