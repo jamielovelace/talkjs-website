@@ -9,13 +9,6 @@ module.exports = {
     fontFamily: {
       body: ['Freight Sans Pro', 'sans-serif'],
     },
-    container: {
-      center: true,
-      padding: {
-        default: '1.25rem',
-        sm: '2rem',
-      },
-    },
     colors: {
       primary: {
         default: '#0E127C',
@@ -87,7 +80,9 @@ module.exports = {
       },
     },
   },
-  variants: {},
+  variants: {
+    translate: ['responsive', 'hover', 'focus', 'active', 'group-hover'],
+  },
   plugins: [require('@tailwindcss/typography')],
   purge: {
     // Learn more on https://tailwindcss.com/docs/controlling-file-size/#removing-unused-css

@@ -6,7 +6,7 @@
       <a
         :href="item.location"
         :title="item.title"
-        class="block my-2 text-dark text-base hover:text-primary-light"
+        class="block my-1 text-body text-base hover:text-primary-light"
       >
         {{ item.label }}
       </a>

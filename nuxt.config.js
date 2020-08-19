@@ -70,7 +70,7 @@ export default {
                 preload: true,
                 localSrc: ['Freight Sans Pro', 'FreightSansPro-Regular'],
                 src: '@/assets/fonts/FreightSansProMedium-Regular',
-                fontWeight: 'normal',
+                fontWeight: 500,
                 fontStyle: 'normal',
               },
               // Font-Face
@@ -80,7 +80,7 @@ export default {
                   'FreightSansPro-RegularItalic',
                 ],
                 src: '@/assets/fonts/FreightSansProMedium-Italic',
-                fontWeight: 'normal',
+                fontWeight: 500,
                 fontStyle: 'italic',
               },
               // Font-Face
@@ -101,11 +101,30 @@ export default {
                 fontWeight: 'bold',
                 fontStyle: 'italic',
               },
+              // Font-Face
+              {
+                preload: true,
+                localSrc: ['Freight Sans Pro Book', 'FreightSansPro-Book'],
+                src: '@/assets/fonts/FreightSansProBook-Regular',
+                fontWeight: 400,
+                fontStyle: 'normal',
+              },
+              // Font-Face
+              {
+                localSrc: [
+                  'Freight Sans Pro Book Italic',
+                  'FreightSansPro-BookItalic',
+                ],
+                src: '@/assets/fonts/FreightSansProBook-Italic',
+                fontWeight: 400,
+                fontStyle: 'italic',
+              },
             ],
           },
         ],
       },
     ],
+    '@nuxtjs/svg-sprite',
   ],
   /*
    ** Build configuration

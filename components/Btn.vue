@@ -3,11 +3,16 @@
     :is="type"
     :href="href"
     :to="to"
-    class="rounded-full inline-flex items-center py-2 px-6 font-bold transition-colors duration-150 focus:outline-none focus:shadow-outline"
+    class="rounded-full inline-flex items-center py-2 px-6 font-bold transition-colors duration-150 focus:outline-none focus:shadow-outline group"
     :class="classes"
   >
     <slot />
-    <Icon v-if="icon" class="ml-1" />
+
+    <svg-icon
+      v-if="icon"
+      class="ml-2 w-5 h-5 transition-transform duration-150 transform group-hover:translate-x-1"
+      :name="icon"
+    />
   </component>
 </template>
 

@@ -1,35 +1,35 @@
 <template>
-  <div class="c-navbar bg-white bg-opacity-75 fixed top-0 inset-x-0 p-4">
-    <nav class="container flex items-center">
+  <div class="c-navbar bg-white bg-opacity-75 fixed top-0 inset-x-0">
+    <nav class="max-w-6xl mx-auto flex items-center font-medium p-4">
       <Logo />
       <ul class="flex ml-6">
         <li
           v-for="item in navItems"
           :key="item.location"
-          class="mr-2 relative text-dark hover:text-primary-light"
+          class="mr-1 relative text-dark hover:text-primary-light"
           @mouseover="item.hover = true"
           @mouseleave="item.hover = false"
         >
           <a
             :href="item.location"
             :title="item.title"
-            class="inline-block py-1 px-3"
+            class="inline-block px-2 lg:px-4"
           >
             {{ item.label }}
           </a>
           <div v-if="item.children">
-            <transition name="dropdown" mode="out-in">
-              <NavbarDropdown
-                v-show="item.hover"
-                :items="[{ id: 30, label: 'Test', location: 'test' }]"
-              />
+            <transition name="dropdown">
+              <NavbarDropdown v-show="item.hover" :items="item.children" />
             </transition>
           </div>
         </li>
       </ul>
       <ul class="ml-auto flex items-center">
         <li class="ml-2">
-          <Btn has-arrow href="https://talkjs.com/dashboard/signup/premium/">
+          <Btn
+            icon="arrow-right"
+            href="https://talkjs.com/dashboard/signup/premium/"
+          >
             Try for free
           </Btn>
         </li>
@@ -137,7 +137,7 @@ export default {
 
 <style>
 .c-navbar {
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(10px);
 }
 
 .dropdown-enter-active,
