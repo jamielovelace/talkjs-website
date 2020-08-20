@@ -1,3 +1,4 @@
+const plugin = require('tailwindcss/plugin')
 /*
  ** TailwindCSS Configuration File
  **
@@ -5,6 +6,9 @@
  ** Default: https://github.com/tailwindcss/tailwindcss/blob/master/stubs/defaultConfig.stub.js
  */
 module.exports = {
+  future: {
+    removeDeprecatedGapUtilities: true,
+  },
   theme: {
     fontFamily: {
       body: ['Freight Sans Pro', 'sans-serif'],
@@ -52,18 +56,6 @@ module.exports = {
       boxShadow: {
         outline: '0 0 0 3px rgba(14, 18, 124, 0.35)',
       },
-      top: {
-        full: '100%',
-      },
-      bottom: {
-        full: '100%',
-      },
-      left: {
-        full: '100%',
-      },
-      right: {
-        full: '100%',
-      },
       height: {
         '50vh': '50vh',
         '60vh': '60vh',
@@ -83,7 +75,27 @@ module.exports = {
   variants: {
     translate: ['responsive', 'hover', 'focus', 'active', 'group-hover'],
   },
-  plugins: [require('@tailwindcss/typography')],
+  plugins: [
+    require('@tailwindcss/typography'),
+    plugin(function ({ addUtilities }) {
+      const positions = {
+        '.top-full': {
+          top: '100%',
+        },
+        '.bottom-full': {
+          bottom: '100%',
+        },
+        '.left-full': {
+          left: '100%',
+        },
+        '.right-full': {
+          right: '100%',
+        },
+      }
+
+      addUtilities(positions, ['responsive', 'hover'])
+    }),
+  ],
   purge: {
     // Learn more on https://tailwindcss.com/docs/controlling-file-size/#removing-unused-css
     enabled: process.env.NODE_ENV === 'production',

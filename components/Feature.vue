@@ -2,10 +2,10 @@
   <div class="flex items-center">
     <div
       v-if="icon"
-      class="flex-shrink p-2 rounded-full"
+      class="flex-shrink rounded-full self-start"
       :class="[
         iconSize === 'sm' ? 'mr-1' : 'mr-3',
-        { 'bg-secondary-light': circled },
+        { 'bg-secondary-light': circled, 'p-2': !flush },
       ]"
     >
       <svg-icon
@@ -35,6 +35,10 @@ export default {
     circled: {
       type: Boolean,
       default: true,
+    },
+    flush: {
+      type: Boolean,
+      default: false,
     },
   },
   computed: {

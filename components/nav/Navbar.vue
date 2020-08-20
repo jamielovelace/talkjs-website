@@ -1,44 +1,46 @@
 <template>
-  <div class="c-navbar bg-white bg-opacity-75 fixed top-0 inset-x-0">
+  <div class="c-navbar bg-white bg-opacity-75 fixed top-0 inset-x-0 z-20">
     <nav class="max-w-6xl mx-auto flex items-center font-medium p-4">
       <Logo />
-      <ul class="flex ml-6">
-        <li
-          v-for="item in navItems"
-          :key="item.location"
-          class="mr-1 relative text-dark hover:text-primary-light"
-          @mouseover="item.hover = true"
-          @mouseleave="item.hover = false"
-        >
-          <a
-            :href="item.location"
-            :title="item.title"
-            class="inline-block px-2 lg:px-4"
+      <div class="flex-1 flex items-center">
+        <ul class="flex ml-6">
+          <li
+            v-for="item in navItems"
+            :key="item.location"
+            class="mr-1 relative text-dark hover:text-primary-light"
+            @mouseover="item.hover = true"
+            @mouseleave="item.hover = false"
           >
-            {{ item.label }}
-          </a>
-          <div v-if="item.children">
-            <transition name="dropdown">
-              <NavbarDropdown v-show="item.hover" :items="item.children" />
-            </transition>
-          </div>
-        </li>
-      </ul>
-      <ul class="ml-auto flex items-center">
-        <li class="ml-2">
-          <Btn
-            icon="arrow-right"
-            href="https://talkjs.com/dashboard/signup/premium/"
-          >
-            Try for free
-          </Btn>
-        </li>
-        <li class="ml-2">
-          <Btn href="https://talkjs.com/dashboard/" color="white">
-            Sign in
-          </Btn>
-        </li>
-      </ul>
+            <a
+              :href="item.location"
+              :title="item.title"
+              class="inline-block px-2 lg:px-4"
+            >
+              {{ item.label }}
+            </a>
+            <div v-if="item.children">
+              <transition name="dropdown">
+                <NavbarDropdown v-show="item.hover" :items="item.children" />
+              </transition>
+            </div>
+          </li>
+        </ul>
+        <ul class="ml-auto flex items-center">
+          <li class="ml-2">
+            <Btn
+              icon="arrow-right"
+              href="https://talkjs.com/dashboard/signup/premium/"
+            >
+              Try for free
+            </Btn>
+          </li>
+          <li class="ml-2">
+            <Btn href="https://talkjs.com/dashboard/" color="white">
+              Sign in
+            </Btn>
+          </li>
+        </ul>
+      </div>
     </nav>
   </div>
 </template>

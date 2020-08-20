@@ -7,7 +7,6 @@
     :class="classes"
   >
     <slot />
-
     <svg-icon
       v-if="icon"
       class="ml-2 w-5 h-5 transition-transform duration-150 transform group-hover:translate-x-1"

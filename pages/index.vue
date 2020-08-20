@@ -1,7 +1,12 @@
 <template>
   <div>
-    <div class="min-h-80vh flex items-center pt-40 pb-32 bg-grey-light">
-      <Container>
+    <div
+      class="min-h-80vh flex items-center pt-40 pb-32 bg-grey-light relative"
+    >
+      <div class="absolute right-0 inset-y-0 w-2/5 bg-secondary">
+        <Triangle class="absolute top-full right-0 mr-16 text-secondary" />
+      </div>
+      <Container class="relative z-10">
         <div class="max-w-md">
           <p class="font-bold text-3xl text-primary leading-none mb-2">
             TalkJS
@@ -19,12 +24,15 @@
         </div>
       </Container>
     </div>
-    <FeaturesSection
+    <FeaturesOverview
       pre-title="How it works"
       title="TalkJS has everything you need in a chat app, out of the box."
       :features-large="featuresLarge"
       :features-small="featuresSmall"
     />
+    <div class="mt-20">
+      <FeaturesSection />
+    </div>
   </div>
 </template>
 
