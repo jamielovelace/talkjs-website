@@ -4,14 +4,16 @@
       v-for="(item, $index) in items"
       :key="item.icon"
       class="mb-20"
-      :reverse="$index % 2"
+      :reverse="$index % 2 ? true : false"
     >
       <template v-slot:content>
         <Feature :icon="item.icon" icon-size="lg">
-          <h2 class="text-3xl font-bold text-dark mt-2 mb-2">
+          <h2
+            class="text-2xl sm:text-3xl md:text-2xl lg:text-3xl mt-2 md:mt-3 mb-4 font-bold text-dark leading-tight"
+          >
             {{ item.title }}
           </h2>
-          <div class="prose-lg" v-html="item.content"></div>
+          <div class="prose sm:prose-lg" v-html="item.content"></div>
         </Feature>
       </template>
       <template v-slot:images>Test</template>

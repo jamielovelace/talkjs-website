@@ -1,7 +1,9 @@
 <template>
-  <div class="c-navbar bg-white bg-opacity-75 fixed top-0 inset-x-0 z-20">
-    <nav class="max-w-6xl mx-auto flex items-center font-medium p-4">
-      <Logo />
+  <div
+    class="c-navbar bg-white bg-opacity-75 fixed top-0 inset-x-0 z-20 px-6 py-2 md:py-4"
+  >
+    <nav class="max-w-6xl mx-auto flex items-center font-medium">
+      <Logo class="w-10 md:w-auto" />
       <div class="flex-1 flex items-center">
         <ul class="flex ml-6">
           <li

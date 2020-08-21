@@ -44,7 +44,7 @@ export default {
   computed: {
     sizeClass() {
       if (this.iconSize === 'lg') {
-        return 'w-12 h-12'
+        return 'w-8 h-8 sm:w-12 sm:h-12'
       } else if (this.iconSize === 'sm') {
         return 'w-5 h-5'
       }
