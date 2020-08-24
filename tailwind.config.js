@@ -100,6 +100,16 @@ module.exports = {
     // Learn more on https://tailwindcss.com/docs/controlling-file-size/#removing-unused-css
     enabled: process.env.NODE_ENV === 'production',
     options: {
+      whitelist: [
+        'aos-init',
+        'aos-animate',
+        'data-aos-delay',
+        'data-aos-duration',
+        'data-aos=fade-up',
+        'data-aos=fade-left',
+        'data-aos=fade-right',
+        'data-aos^=fade',
+      ],
       whitelistPatterns: [
         /-(leave|enter|appear)(|-(to|from|active))$/,
         /^(?!(|.*?:)cursor-move).+-move$/,

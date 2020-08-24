@@ -12,14 +12,20 @@
     </div>
     <div class="max-w-5xl mx-auto -mt-56">
       <Container>
-        <div class="w-full p-8 rounded-lg bg-white max-w-3xl">
-          <div class="md:grid md:grid-cols-2 md:gap-4 mb-4 md:mb-8">
+        <div
+          class="js-features-overview w-full p-8 rounded-lg bg-white max-w-3xl"
+        >
+          <div class="md:flex md:flex-wrap md:-ml-4 mb-4">
             <Feature
-              v-for="feature in featuresLarge"
+              v-for="(feature, index) in featuresLarge"
               :key="feature.icon"
               :icon="feature.icon"
               icon-size="md"
-              class="mb-2 md:mb-auto"
+              class="mb-2 md:mb-4 md:flex-grow md:pl-4 md:w-1/2"
+              data-aos="fade"
+              data-aos-once="true"
+              :data-aos-delay="50 + index * 100"
+              data-aos-anchor=".js-features-overview"
             >
               <div class="text-dark text-xl">{{ feature.label }}</div>
             </Feature>

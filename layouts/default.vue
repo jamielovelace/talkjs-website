@@ -6,3 +6,12 @@
 </template>
 
 <style></style>
+
+<script>
+import AOS from 'aos'
+export default {
+  mounted() {
+    AOS.init()
+  },
+}
+</script>
