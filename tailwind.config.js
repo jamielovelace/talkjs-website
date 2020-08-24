@@ -40,7 +40,7 @@ module.exports = {
           a: {
             color: '#0E127C',
             '&:hover': {
-              color: '#AEBFAB',
+              color: '#1820D8',
             },
           },
           h1: {

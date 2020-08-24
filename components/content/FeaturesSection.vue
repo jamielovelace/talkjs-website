@@ -16,7 +16,10 @@
           <div class="prose sm:prose-lg" v-html="item.content"></div>
         </Feature>
       </template>
-      <template v-slot:images>Test</template>
+      <template v-slot:images>
+        <AnimationMessaging v-if="item.customAnimation === 'messaging'" />
+        <div v-else></div>
+      </template>
     </FeatureBlock>
   </Container>
 </template>
@@ -39,6 +42,7 @@ export default {
             </p>
           `,
           images: [],
+          customAnimation: 'messaging',
         },
 
         {
