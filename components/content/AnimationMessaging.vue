@@ -15,7 +15,7 @@
       type="other"
       data-aos="fade"
       data-aos-once="true"
-      data-aos-delay="500"
+      data-aos-delay="600"
       data-aos-anchor=".js-messaging"
     >
       hey!
@@ -23,7 +23,7 @@
     <ChatboxItem
       data-aos="fade"
       data-aos-once="true"
-      data-aos-delay="700"
+      data-aos-delay="900"
       data-aos-anchor=".js-messaging"
       :avatar="require('@/assets/images/avatar-3.jpg')"
     >
@@ -34,7 +34,7 @@
       type="other"
       data-aos="fade"
       data-aos-once="true"
-      data-aos-delay="900"
+      data-aos-delay="1300"
       data-aos-anchor=".js-messaging"
     >
       sure thing!
@@ -44,7 +44,7 @@
       type="other"
       data-aos="fade"
       data-aos-once="true"
-      data-aos-delay="1100"
+      data-aos-delay="1800"
       data-aos-anchor=".js-messaging"
     >
       <div class="flex items-center">

@@ -58,25 +58,11 @@
       </div>
     </Container>
 
-    <div class="bg-primary pb-24 mt-24 relative text-white">
-      <Container>
-        <Triangle />
-        <h3 class="mt-12 font-bold text-4xl mb-2">Ready to get started?</h3>
-        <div class="prose md:prose-lg text-white">
-          <p>
-            Whether you're building a marketplace, on-demand business,
-            e‑commerce, crowdfunding, travel and events platform, TalkJS is the
-            chat tool for you.
-          </p>
-        </div>
-        <p class="mt-6">
-          <Btn href="/" icon="arrow-right" color="secondary" class="mr-2"
-            >Try for free</Btn
-          >
-          <Btn href="/" color="primary" class="mr-2">Live demo</Btn>
-        </p>
-      </Container>
-    </div>
+    <PreFooter
+      :title="preFooter.title"
+      :body="preFooter.body"
+      :images="preFooter.images"
+    />
   </div>
 </template>
 
@@ -184,6 +170,45 @@ export default {
           body: `<p>Prevent users from exchanging email addresses, phone numbers and website addresses. Configure exceptions in detail.</p>`,
         },
       ],
+      preFooter: {
+        title: 'Ready to get started?',
+        body: `<p>Whether you're building a marketplace, on-demand business, e‑commerce, crowdfunding, travel and events platform, TalkJS is the chat tool for you.</p>`,
+        images: [
+          {
+            posX: 0,
+            posY: 0,
+            size: 55,
+            image: {
+              alt: 'face',
+              desktop: { url: require('@/assets/images/face.jpg') },
+              tablet: { url: require('@/assets/images/face.jpg') },
+              url: require('@/assets/images/face.jpg'),
+            },
+          },
+          {
+            posX: 15,
+            posY: 60,
+            size: 60,
+            image: {
+              alt: 'face',
+              desktop: { url: require('@/assets/images/face-3.jpg') },
+              tablet: { url: require('@/assets/images/face-3.jpg') },
+              url: require('@/assets/images/face-3.jpg'),
+            },
+          },
+          {
+            posX: 60,
+            posY: 20,
+            size: 40,
+            image: {
+              alt: 'face',
+              desktop: { url: require('@/assets/images/face-2.jpg') },
+              tablet: { url: require('@/assets/images/face-2.jpg') },
+              url: require('@/assets/images/face-2.jpg'),
+            },
+          },
+        ],
+      },
     }
   },
 }

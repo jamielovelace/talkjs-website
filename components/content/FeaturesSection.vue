@@ -18,34 +18,7 @@
       </template>
       <template v-slot:images>
         <AnimationMessaging v-if="item.customAnimation === 'messaging'" />
-        <div v-else-if="item.images" class="relative pb-10/12">
-          <div
-            v-for="(img, $childIndex) in item.images"
-            :key="$id('feature-image') + $childIndex"
-            data-aos="fade"
-            :data-aos-anchor="$idRef('feature')"
-            :data-aos-delay="($childIndex + 1) * 100"
-            class="absolute shadow-xl rounded-lg bg-white bg-opacity-75 c-feature-image overflow-hidden"
-            :class="imageClasses(img)"
-            :style="{
-              left: img.posX + '%',
-              top: img.posY + '%',
-              width: img.size + '%',
-            }"
-          >
-            <picture v-if="img">
-              <source
-                :srcset="img.image.desktop.url"
-                media="(min-width: 900px)"
-              />
-              <source
-                :srcset="img.image.tablet.url"
-                media="(min-width: 550px)"
-              />
-              <img :src="img.image.url" :alt="img.image.alt" />
-            </picture>
-          </div>
-        </div>
+        <ImageGrid v-else-if="item.images.length" :images="item.images" />
       </template>
     </FeatureBlock>
   </Container>
@@ -124,7 +97,19 @@ export default {
             <p>Let your users get back to a conversation whenever they want. TalkJS stores all messages safely and securely so you don't have to.</p>
             <p>The TalkJS Inbox View shows your users a history of all conversations and lets them respond in any of them, all inside a familiar and well-designed interface.</p>
           `,
-          images: [],
+          images: [
+            {
+              posX: 0,
+              posY: 0,
+              size: 100,
+              image: {
+                alt: 'Conversation history',
+                desktop: { url: require('@/assets/images/history.jpg') },
+                tablet: { url: require('@/assets/images/history.jpg') },
+                url: require('@/assets/images/history.jpg'),
+              },
+            },
+          ],
         },
 
         {
@@ -174,7 +159,56 @@ export default {
             <p>Pick one of our expertly designed TalkJS Themes and customize it to perfectly fit your brand.</p>
             <p>A theme is simply a CSS file that gives you control over the most important parts of the interface. Stay in control of the look and feel but leave the heavy lifting of building a real-time messenger to TalkJS.</p>
           `,
-          images: [],
+          images: [
+            {
+              posX: 0,
+              posY: 0,
+              size: 80,
+              plain: true,
+              image: {
+                alt: 'Green theme',
+                desktop: { url: require('@/assets/images/theme.png') },
+                tablet: { url: require('@/assets/images/theme.png') },
+                url: require('@/assets/images/theme.png'),
+              },
+            },
+            {
+              posX: 20,
+              posY: 25,
+              size: 80,
+              plain: true,
+              image: {
+                alt: 'Orange theme',
+                desktop: { url: require('@/assets/images/theme-1.png') },
+                tablet: { url: require('@/assets/images/theme-1.png') },
+                url: require('@/assets/images/theme-1.png'),
+              },
+            },
+            {
+              posX: 5,
+              posY: 50,
+              size: 80,
+              plain: true,
+              image: {
+                alt: 'Blue theme',
+                desktop: { url: require('@/assets/images/theme-2.png') },
+                tablet: { url: require('@/assets/images/theme-2.png') },
+                url: require('@/assets/images/theme-2.png'),
+              },
+            },
+            {
+              posX: 18,
+              posY: 75,
+              size: 80,
+              plain: true,
+              image: {
+                alt: 'Purple theme',
+                desktop: { url: require('@/assets/images/theme-3.png') },
+                tablet: { url: require('@/assets/images/theme-3.png') },
+                url: require('@/assets/images/theme-3.png'),
+              },
+            },
+          ],
         },
 
         {
@@ -188,43 +222,7 @@ export default {
       ],
     }
   },
-  methods: {
-    imageClasses: (item) => {
-      const size = item.size || ''
-      const classes = []
-
-      switch (size) {
-        case 'xs':
-          classes.push('w-1/4')
-          break
-        case 'sm':
-          classes.push('w-2/5')
-          break
-        case 'md':
-          classes.push('w-1/2')
-          break
-        case 'lg':
-          classes.push('w-3/5')
-          break
-        case 'xl':
-          classes.push('w-3/4')
-          break
-        case 'full':
-          classes.push('w-full')
-          break
-        default:
-          break
-      }
-      // eslint-disable-next-line
-      console.log(classes)
-      return classes
-    },
-  },
 }
 </script>
 
-<style scoped>
-.c-feature-image {
-  backdrop-filter: blur(5px);
-}
-</style>
+<style scoped></style>

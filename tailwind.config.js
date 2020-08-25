@@ -53,6 +53,9 @@ module.exports = {
       },
     },
     extend: {
+      screens: {
+        lap: '900px',
+      },
       boxShadow: {
         outline: '0 0 0 3px rgba(14, 18, 124, 0.35)',
       },
