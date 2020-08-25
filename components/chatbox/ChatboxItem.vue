@@ -1,10 +1,10 @@
 <template>
   <div class="mb-2">
     <div class="flex items-center" :class="{ 'pl-8': type === 'me' }">
-      <div v-if="avatar && type !== 'me'" class="flex-shrink-0 mr-2 self-start">
+      <div v-if="avatar && type !== 'me'" class="flex-shrink-0 mr-2">
         <img class="w-12 h-12 rounded-full" :src="avatar" />
       </div>
-      <div :class="type === 'me' ? 'ml-auto' : 'flex-1'">
+      <div class="flex" :class="type === 'me' ? 'ml-auto' : 'flex-grow-1'">
         <div
           class="relative c-chatbox__message inline-block leading-tight max-w-sm"
           :class="

@@ -1,5 +1,5 @@
 <template>
-  <Container>
+  <Container :id="$id('feature')">
     <FeatureBlock
       v-for="(item, $index) in items"
       :key="item.icon"
@@ -18,7 +18,34 @@
       </template>
       <template v-slot:images>
         <AnimationMessaging v-if="item.customAnimation === 'messaging'" />
-        <div v-else></div>
+        <div v-else-if="item.images" class="relative pb-10/12">
+          <div
+            v-for="(img, $childIndex) in item.images"
+            :key="$id('feature-image') + $childIndex"
+            data-aos="fade"
+            :data-aos-anchor="$idRef('feature')"
+            :data-aos-delay="($childIndex + 1) * 100"
+            class="absolute shadow-xl rounded-lg bg-white bg-opacity-75 c-feature-image overflow-hidden"
+            :class="imageClasses(img)"
+            :style="{
+              left: img.posX + '%',
+              top: img.posY + '%',
+              width: img.size + '%',
+            }"
+          >
+            <picture v-if="img">
+              <source
+                :srcset="img.image.desktop.url"
+                media="(min-width: 900px)"
+              />
+              <source
+                :srcset="img.image.tablet.url"
+                media="(min-width: 550px)"
+              />
+              <img :src="img.image.url" :alt="img.image.alt" />
+            </picture>
+          </div>
+        </div>
       </template>
     </FeatureBlock>
   </Container>
@@ -64,7 +91,30 @@ export default {
               Of course, you can fully customize the email and SMS message body.
             </p>
           `,
-          images: [],
+          images: [
+            {
+              posX: 0,
+              posY: 0,
+              size: 100,
+              image: {
+                alt: 'email message',
+                desktop: { url: require('@/assets/images/email-message.png') },
+                tablet: { url: require('@/assets/images/email-message.png') },
+                url: require('@/assets/images/email-message.png'),
+              },
+            },
+            {
+              posX: -20,
+              posY: 30,
+              size: 75,
+              image: {
+                alt: 'text message',
+                desktop: { url: require('@/assets/images/text-message.png') },
+                tablet: { url: require('@/assets/images/text-message.png') },
+                url: require('@/assets/images/text-message.png'),
+              },
+            },
+          ],
         },
 
         {
@@ -138,7 +188,43 @@ export default {
       ],
     }
   },
+  methods: {
+    imageClasses: (item) => {
+      const size = item.size || ''
+      const classes = []
+
+      switch (size) {
+        case 'xs':
+          classes.push('w-1/4')
+          break
+        case 'sm':
+          classes.push('w-2/5')
+          break
+        case 'md':
+          classes.push('w-1/2')
+          break
+        case 'lg':
+          classes.push('w-3/5')
+          break
+        case 'xl':
+          classes.push('w-3/4')
+          break
+        case 'full':
+          classes.push('w-full')
+          break
+        default:
+          break
+      }
+      // eslint-disable-next-line
+      console.log(classes)
+      return classes
+    },
+  },
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped>
+.c-feature-image {
+  backdrop-filter: blur(5px);
+}
+</style>

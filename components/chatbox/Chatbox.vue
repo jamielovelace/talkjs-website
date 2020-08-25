@@ -27,7 +27,9 @@
         class="c-chatbox__item c-chatbox__item--5"
         :image="require('@/assets/images/map.jpg')"
       >
-        it’s on this street correct? (contact information was hidden)
+        <span class="break-all"
+          >https://www.google.com/maps/place/Southsea,+Portsmouth/@50.7835769,-1.0874084,16.36z/data=!4m13!1m7!3m6!1s0...</span
+        >
       </ChatboxItem>
     </div>
   </div>
