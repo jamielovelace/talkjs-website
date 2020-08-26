@@ -11,7 +11,7 @@
       :class="[
         imageClasses(img),
         {
-          'shadow-xl rounded-lg bg-white bg-opacity-75 c-feature-image overflow-hidden': !img.plain,
+          'shadow-xl rounded-lg c-feature-image overflow-hidden': !img.plain,
         },
       ]"
       :style="{

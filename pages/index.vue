@@ -44,7 +44,9 @@
     </Container>
 
     <Container class="mt-16">
-      <h2 class="text-center text-5xl text-dark font-bold mb-8">
+      <h2
+        class="md:text-center text-3xl md:text-5xl text-dark font-bold mb-8 leading-none"
+      >
         And much more...
       </h2>
       <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-12">

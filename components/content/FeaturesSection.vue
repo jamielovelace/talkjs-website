@@ -178,7 +178,98 @@ export default {
             <p>TalkJS has built-in localization features that allow you to display the text (e.g. "Send") of the interfaces to the user in their own language.</p>
             <p>There are two ways to set the language in TalkJS. You can change the default language in the Dashboard for all of your platform's users. If you need to support multiple languages for different, you can set a language per User Configuration.</p>
           `,
-          images: [],
+          images: [
+            {
+              posX: 0,
+              posY: 0,
+              size: 40,
+              image: {
+                alt: 'Send file',
+                desktop: {
+                  url: require('@/assets/images/send-file-en.png'),
+                },
+                tablet: {
+                  url: require('@/assets/images/send-file-en.png'),
+                },
+                url: require('@/assets/images/send-file-en.png'),
+              },
+            },
+            {
+              posX: 40,
+              posY: 17,
+              size: 50,
+              image: {
+                alt: 'Verzend bestandy',
+                desktop: {
+                  url: require('@/assets/images/send-file-nl.png'),
+                },
+                tablet: {
+                  url: require('@/assets/images/send-file-nl.png'),
+                },
+                url: require('@/assets/images/send-file-nl.png'),
+              },
+            },
+            {
+              posX: 5,
+              posY: 30,
+              size: 40,
+              image: {
+                alt: 'Wyślij plik',
+                desktop: {
+                  url: require('@/assets/images/send-file-pl.png'),
+                },
+                tablet: {
+                  url: require('@/assets/images/send-file-pl.png'),
+                },
+                url: require('@/assets/images/send-file-pl.png'),
+              },
+            },
+            {
+              posX: 45,
+              posY: 85,
+              size: 50,
+              image: {
+                alt: 'Share location',
+                desktop: {
+                  url: require('@/assets/images/share-location-en.png'),
+                },
+                tablet: {
+                  url: require('@/assets/images/share-location-en.png'),
+                },
+                url: require('@/assets/images/share-location-en.png'),
+              },
+            },
+            {
+              posX: 40,
+              posY: 50,
+              size: 50,
+              image: {
+                alt: 'Del lokasjon',
+                desktop: {
+                  url: require('@/assets/images/share-location-no.png'),
+                },
+                tablet: {
+                  url: require('@/assets/images/share-location-no.png'),
+                },
+                url: require('@/assets/images/share-location-no.png'),
+              },
+            },
+            {
+              posX: 14,
+              posY: 68,
+              size: 40,
+              image: {
+                alt: 'Ort teilen',
+                desktop: {
+                  url: require('@/assets/images/share-location-de.png'),
+                },
+                tablet: {
+                  url: require('@/assets/images/share-location-de.png'),
+                },
+                url: require('@/assets/images/share-location-de.png'),
+              },
+            },
+          ],
         },
 
         {
@@ -268,7 +359,23 @@ export default {
           content: `
             <p>See who talks to who and monitor their messages in the TalkJS Dashboard. This lets you stay in full control of communication so you can jump in when necessary.</p>
           `,
-          images: [],
+          images: [
+            {
+              posX: 0,
+              posY: 17,
+              size: 100,
+              image: {
+                alt: 'Activity History',
+                desktop: {
+                  url: require('@/assets/images/activity-history.png'),
+                },
+                tablet: {
+                  url: require('@/assets/images/activity-history.png'),
+                },
+                url: require('@/assets/images/activity-history.png'),
+              },
+            },
+          ],
         },
       ],
     }
