@@ -41,6 +41,14 @@
           </Feature>
         </template>
       </FeatureBlock>
+      <div class="mt-6 flex overflow-hidden rounded-lg shadow-lg">
+        <div class="w-64 bg-grey-light"></div>
+        <div class="flex-1">
+          <Prism lang="js" height="400px">
+            console.log('test')
+          </Prism>
+        </div>
+      </div>
     </Container>
 
     <Container class="mt-16">

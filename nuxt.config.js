@@ -38,6 +38,7 @@ export default {
     { src: '@/plugins/aos', ssr: false },
     { src: '@/plugins/vue-lazyload', ssr: false },
     { src: '@/plugins/unique-id' },
+    { src: '@/plugins/prism' },
   ],
   /*
    ** Auto import components
