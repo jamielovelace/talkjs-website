@@ -3,10 +3,11 @@
     <div
       v-for="(img, $childIndex) in images"
       :key="$id('image-grid-item') + $childIndex"
+      v-lazy-container="{ selector: 'img' }"
       data-aos="fade-up"
       :data-aos-anchor="$idRef('image-grid')"
-      :data-aos-delay="($childIndex + 1) * 200 + 300"
-      class="absolute"
+      :data-aos-delay="($childIndex + 1) * 150 + 100"
+      class="absolute max-h-full"
       :class="[
         imageClasses(img),
         {
@@ -19,16 +20,15 @@
         width: img.size + '%',
       }"
     >
-      <div v-if="img.image" v-lazy-container="{ selector: 'img' }">
-        <img
-          :data-loading="img.image.lqip"
-          :data-srcset="
-            img.image.tablet.url + ' 600w, ' + img.image.desktop.url + ' 900w'
-          "
-          :data-src="img.image.url"
-          :alt="img.image.alt"
-        />
-      </div>
+      <img
+        class="max-w-full max-h-full w-auto"
+        :data-loading="img.image.lqip"
+        :data-srcset="
+          img.image.tablet.url + ' 600w, ' + img.image.desktop.url + ' 900w'
+        "
+        :data-src="img.image.url"
+        :alt="img.image.alt"
+      />
     </div>
   </div>
 </template>

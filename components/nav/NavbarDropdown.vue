@@ -1,6 +1,6 @@
 <template>
   <ul
-    class="c-navbar-dropdown bg-white rounded-lg bg-opacity-75 absolute left-0 top-full py-3 px-4 shadow-lg"
+    class="c-navbar-dropdown bg-white rounded-lg absolute left-0 top-full py-3 px-4 shadow-lg"
   >
     <li v-for="item in items" :key="item.location">
       <a
@@ -29,7 +29,6 @@ export default {
 
 <style>
 .c-navbar-dropdown {
-  backdrop-filter: blur(8px);
   width: 175px;
 }
 </style>

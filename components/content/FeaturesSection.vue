@@ -1,27 +1,29 @@
 <template>
-  <Container :id="$id('feature')">
-    <FeatureBlock
-      v-for="(item, $index) in items"
-      :key="item.icon"
-      class="mb-20"
-      :reverse="$index % 2 ? true : false"
-    >
-      <template v-slot:content>
-        <Feature :icon="item.icon" icon-size="lg">
-          <h2
-            class="text-2xl sm:text-3xl md:text-2xl lg:text-3xl mt-2 md:mt-3 mb-4 font-bold text-dark leading-tight"
-          >
-            {{ item.title }}
-          </h2>
-          <div class="prose sm:prose-lg" v-html="item.content"></div>
-        </Feature>
-      </template>
-      <template v-slot:images>
-        <AnimationMessaging v-if="item.customAnimation === 'messaging'" />
-        <ImageGrid v-else-if="item.images.length" :images="item.images" />
-      </template>
-    </FeatureBlock>
-  </Container>
+  <div class="overflow-hidden w-full">
+    <Container :id="$id('feature')">
+      <FeatureBlock
+        v-for="(item, $index) in items"
+        :key="item.icon"
+        class="mb-20"
+        :reverse="$index % 2 ? true : false"
+      >
+        <template v-slot:content>
+          <Feature :icon="item.icon" icon-size="lg">
+            <h2
+              class="text-2xl sm:text-3xl md:text-2xl lg:text-3xl mt-2 md:mt-3 mb-4 font-bold text-dark leading-tight"
+            >
+              {{ item.title }}
+            </h2>
+            <div class="prose sm:prose-lg" v-html="item.content"></div>
+          </Feature>
+        </template>
+        <template v-slot:images>
+          <AnimationMessaging v-if="item.customAnimation === 'messaging'" />
+          <ImageGrid v-else-if="item.images.length" :images="item.images" />
+        </template>
+      </FeatureBlock>
+    </Container>
+  </div>
 </template>
 
 <script>
@@ -77,7 +79,7 @@ export default {
               },
             },
             {
-              posX: -20,
+              posX: 40,
               posY: 30,
               size: 75,
               image: {
@@ -119,7 +121,20 @@ export default {
             <p>Bring a single conversation into focus from anywhere on your platform with our chat pop-up. You can actually test this one live from this website to chat with us :)</p>
             <p>Stay in full control over who can talk to who, with just a few lines of code.</p>
           `,
-          images: [],
+          images: [
+            {
+              posX: 20,
+              posY: -10,
+              size: 75,
+              plain: true,
+              image: {
+                alt: 'Chatbox',
+                desktop: { url: require('@/assets/images/chatbox.png') },
+                tablet: { url: require('@/assets/images/chatbox.png') },
+                url: require('@/assets/images/chatbox.png'),
+              },
+            },
+          ],
         },
 
         {
@@ -129,7 +144,31 @@ export default {
             <p>Years of sweat and tears went into making the TalkJS messaging UI fast, fun, and easy to use. Fully responsive, TalkJS works great on nearly all mobile phones and computers.</p>
             <p>We frequently test TalkJS on the last 2 desktop and mobile versions of Chrome, Safari, Firefox, Edge and Opera, as well as Internet Explorer 9 and up.</p>
           `,
-          images: [],
+          images: [
+            {
+              posX: 0,
+              posY: 0,
+              size: 110,
+              image: {
+                alt: 'Desktop view',
+                desktop: { url: require('@/assets/images/desktop.png') },
+                tablet: { url: require('@/assets/images/desktop.png') },
+                url: require('@/assets/images/desktop.png'),
+              },
+            },
+            {
+              posX: 65,
+              posY: 15,
+              size: 50,
+              plain: true,
+              image: {
+                alt: 'Mobile view',
+                desktop: { url: require('@/assets/images/responsive.png') },
+                tablet: { url: require('@/assets/images/responsive.png') },
+                url: require('@/assets/images/responsive.png'),
+              },
+            },
+          ],
         },
 
         {
@@ -149,7 +188,19 @@ export default {
             <p>In TalkJS, you can shape conversations any way you like. Create a private one-on-one conversation or engage multiple users in a channel, topic, group, or chat room. It's all about shaping a TalkJS conversation to fit your use case. You can add users to an existing conversation or create a multi-user chat from scratch.</p>
             <p>With TalkJS, it's easy to create a place where meaningful conversations thrive.</p>
           `,
-          images: [],
+          images: [
+            {
+              posX: 0,
+              posY: 0,
+              size: 100,
+              image: {
+                alt: 'Channels',
+                desktop: { url: require('@/assets/images/channel.png') },
+                tablet: { url: require('@/assets/images/channel.png') },
+                url: require('@/assets/images/channel.png'),
+              },
+            },
+          ],
         },
 
         {

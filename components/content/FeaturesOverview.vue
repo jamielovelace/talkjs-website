@@ -15,7 +15,7 @@
         <div
           class="js-features-overview w-full p-8 rounded-lg bg-white max-w-3xl"
         >
-          <div class="md:grid md:grid-cols-2 md:gap-4 mb-4 md:mb-8">
+          <div class="sm:grid sm:grid-cols-2 sm:gap-2 md:gap-4 mb-4 md:mb-8">
             <Feature
               v-for="(feature, index) in featuresLarge"
               :key="feature.icon"
@@ -30,7 +30,7 @@
               <div class="text-dark text-xl">{{ feature.label }}</div>
             </Feature>
           </div>
-          <div class="md:grid md:grid-cols-2 md:gap-4">
+          <div class="sm:grid sm:grid-cols-2 sm:gap-2 md:gap-4">
             <div
               v-for="(feature, index) in featuresSmall"
               :key="feature.icon"

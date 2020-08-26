@@ -3,10 +3,10 @@
     class="md:flex -ml-12 items-center"
     :class="{ 'md:flex-row-reverse': reverse }"
   >
-    <div class="pl-12 flex-1">
+    <div class="pl-12 flex-1 mb-4 md:mb-0">
       <slot name="content"> </slot>
     </div>
-    <div v-if="$slots.images" class="pl-12 flex-1">
+    <div v-if="$slots.images" class="pl-12 flex-1 mb-4 md:mb-0">
       <slot name="images"> </slot>
     </div>
   </div>
