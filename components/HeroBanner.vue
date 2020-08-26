@@ -1,6 +1,6 @@
 <template>
   <div
-    class="md:min-h-80vh flex items-center pt-40 pb-24 bg-grey-light relative"
+    class="md:min-h-80vh flex items-center pt-24 md:pt-40 pb-24 bg-grey-light relative"
   >
     <div class="absolute left-0 bottom-0 w-3/5 bg-white h-32"></div>
     <div class="absolute right-0 inset-y-0 w-2/5 bg-secondary">

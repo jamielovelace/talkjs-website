@@ -1,6 +1,6 @@
 <template>
   <ul
-    class="c-navbar-dropdown bg-white rounded-lg absolute left-0 top-full py-3 px-4 shadow-lg"
+    class="c-navbar-dropdown lap:bg-white lap:rounded-lg lap:absolute left-0 lap:top-full lap:py-3 px-4 lap:shadow-lg"
   >
     <li v-for="item in items" :key="item.location">
       <a

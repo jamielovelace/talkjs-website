@@ -21,6 +21,7 @@
               class="mb-2 lap:mb-0 lap:mr-1 relative text-dark hover:text-primary-light"
               @mouseover="item.hover = true"
               @mouseleave="item.hover = false"
+              @click="item.hover = true"
             >
               <a
                 :href="item.location"
@@ -89,20 +90,20 @@ export default {
           location: 'https://talkjs.com/demo/',
           title: 'Demo',
           label: 'Demo',
-          dropdownOpen: false,
+          hover: false,
         },
         {
           id: 5,
           location: 'https://talkjs.com/testimonials/',
           title: 'Testimonials',
           label: 'Testimonials',
-          dropdownOpen: false,
+          hover: false,
         },
         {
           id: 6,
           title: 'Developers',
           label: 'Developers',
-          dropdownOpen: false,
+          hover: false,
           children: [
             {
               id: 7,

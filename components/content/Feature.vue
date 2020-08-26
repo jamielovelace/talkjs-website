@@ -1,8 +1,8 @@
 <template>
-  <div class="flex items-center">
+  <div class="items-center" :class="iconSize === 'lg' ? 'sm:flex' : 'flex'">
     <div
       v-if="icon"
-      class="flex-shrink rounded-full self-start"
+      class="flex-shrink inline-block rounded-full self-start"
       :class="[
         iconSize === 'sm' ? 'mr-1' : 'mr-3',
         { 'bg-secondary-light': circled, 'p-2': !flush },
