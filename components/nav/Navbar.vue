@@ -21,7 +21,7 @@
               class="mb-2 lap:mb-0 lap:mr-1 relative text-dark hover:text-primary-light"
               @mouseover="item.hover = true"
               @mouseleave="item.hover = false"
-              @click="item.hover = true"
+              @click="item.hover = !item.hover"
             >
               <a
                 :href="item.location"
