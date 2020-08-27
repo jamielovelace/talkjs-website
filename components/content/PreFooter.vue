@@ -2,7 +2,7 @@
   <div class="bg-primary pb-16 md:pb-24 mt-16 md:mt-24 relative text-white">
     <Decorator
       :type="2"
-      class="text-white opacity-25 max-w-sm absolute right-0 mr-40 mt-12"
+      class="hidden md:block text-white opacity-25 max-w-sm absolute right-0 mr-40 mt-12"
     />
     <Container>
       <Triangle />

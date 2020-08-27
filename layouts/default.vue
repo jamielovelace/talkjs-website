@@ -5,14 +5,7 @@
   </div>
 </template>
 
-<style>
-img[lazy] {
-  transition: filter 0.1s ease;
-}
-img[lazy='loading'] {
-  filter: blur(10px);
-}
-</style>
+<style></style>
 
 <script>
 import AOS from 'aos'
