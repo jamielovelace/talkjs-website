@@ -2,24 +2,29 @@
   <div class="overflow-hidden w-full">
     <Container :id="$id('feature')">
       <FeatureBlock
-        v-for="(item, $index) in items"
+        v-for="(item, $index) in features"
         :key="item.icon"
         class="mb-20"
         :reverse="$index % 2 ? true : false"
       >
         <template v-slot:content>
-          <Feature :icon="item.icon" icon-size="lg">
+          <Feature :icon="item.primary.icon" icon-size="lg">
             <h2
               class="text-2xl sm:text-3xl md:text-2xl lg:text-3xl mt-2 md:mt-3 mb-4 font-bold text-dark leading-tight"
             >
-              {{ item.title }}
+              {{ $prismic.asText(item.primary.feature_name) }}
             </h2>
-            <div class="prose sm:prose-lg" v-html="item.content"></div>
+            <prismic-rich-text
+              class="prose sm:prose-lg"
+              :field="item.primary.content"
+            />
           </Feature>
         </template>
         <template v-slot:images>
-          <AnimationMessaging v-if="item.customAnimation === 'messaging'" />
-          <ImageGrid v-else-if="item.images.length" :images="item.images" />
+          <AnimationMessaging
+            v-if="item.primary.preset_animation === 'messaging'"
+          />
+          <ImageGrid v-else-if="item.items" :images="item.items" />
         </template>
       </FeatureBlock>
     </Container>
@@ -28,6 +33,12 @@
 
 <script>
 export default {
+  props: {
+    features: {
+      type: Array,
+      default: () => [],
+    },
+  },
   data() {
     return {
       items: [

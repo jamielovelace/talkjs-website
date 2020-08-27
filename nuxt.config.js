@@ -130,7 +130,19 @@ export default {
       },
     ],
     '@nuxtjs/svg-sprite',
+    '@nuxtjs/prismic',
   ],
+
+  /*
+   ** Prismic config
+   */
+  prismic: {
+    endpoint: 'https://talkjs.cdn.prismic.io/api/v2',
+    linkResolver: '@/plugins/link-resolver',
+    htmlSerializer: '@/plugins/html-serializer',
+    preview: '/preview/',
+  },
+
   /*
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/

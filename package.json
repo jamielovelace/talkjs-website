@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@aceforth/nuxt-optimized-images": "^1.1.0",
+    "@nuxtjs/prismic": "^1.2.3",
     "@nuxtjs/svg-sprite": "^0.4.11",
     "@tailwindcss/typography": "^0.2.0",
     "aos": "^3.0.0-beta.6",

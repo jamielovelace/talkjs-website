@@ -7,7 +7,10 @@
           <h3 class="mt-12 font-bold text-4xl mb-2 leading-tight">
             {{ title }}
           </h3>
-          <div class="prose md:prose-lg text-white" v-html="body"></div>
+          <prismic-rich-text
+            class="prose sm:prose-lg text-white"
+            :field="body"
+          />
           <p class="mt-6">
             <Btn href="/" icon="arrow-right" color="secondary" class="mr-2"
               >Try for free</Btn

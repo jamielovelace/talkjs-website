@@ -1,14 +1,17 @@
 <template>
   <div>
-    <HeroBanner />
+    <HeroBanner
+      :title="$prismic.asText(document.main_title)"
+      :subtitle="$prismic.asText(document.sub_title)"
+    />
     <FeaturesOverview
-      pre-title="How it works"
-      title="TalkJS has everything you need in a chat app, out of the box."
-      :features-large="featuresLarge"
-      :features-small="featuresSmall"
+      :pre-title="$prismic.asText(document.features_overview_pre_title)"
+      :title="$prismic.asText(document.features_overview_title)"
+      :features-large="document.features_overview_list"
+      :features-small="document.features_overview_list_secondary"
     />
     <div class="mt-20">
-      <FeaturesSection />
+      <FeaturesSection :features="document.body" />
     </div>
     <Container>
       <FeatureBlock>
@@ -69,15 +72,25 @@
     </Container>
 
     <PreFooter
-      :title="preFooter.title"
-      :body="preFooter.body"
-      :images="preFooter.images"
+      :title="$prismic.asText(document.pre_footer_title)"
+      :body="document.pre_footer_content"
+      :images="document.images"
     />
   </div>
 </template>
 
 <script>
 export default {
+  async asyncData({ $prismic, error }) {
+    try {
+      const document = (await $prismic.api.getSingle('features_page')).data
+      return {
+        document,
+      }
+    } catch (e) {
+      error({ statusCode: 404, message: 'Page not found' })
+    }
+  },
   data() {
     return {
       featuresLarge: [

@@ -27,7 +27,9 @@
               :data-aos-delay="100 + index * 100"
               data-aos-anchor=".js-features-overview"
             >
-              <div class="text-dark text-xl">{{ feature.label }}</div>
+              <div class="text-dark text-xl">
+                {{ $prismic.asText(feature.name) }}
+              </div>
             </Feature>
           </div>
           <div class="sm:grid sm:grid-cols-2 sm:gap-2 md:gap-4">
@@ -40,7 +42,7 @@
               data-aos-anchor=".js-features-overview"
             >
               <Feature :icon="feature.icon" icon-size="sm" :circled="false">
-                <div>{{ feature.label }}</div>
+                <div>{{ $prismic.asText(feature.name) }}</div>
               </Feature>
             </div>
           </div>

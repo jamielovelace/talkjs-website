@@ -17,12 +17,12 @@
           <h1
             class="text-dark text-4xl md:text-6xl lg:text-6xl font-bold leading-none mb-4 md:mb-6"
           >
-            A first-class messaging experience
+            {{ title }}
           </h1>
           <p
             class="sm:max-w-sm text-dark text-xl md:text-2xl leading-tight font-light mb-6 md:mb-8"
           >
-            Power-up your user experience with great messaging features.
+            {{ subtitle }}
           </p>
           <p>
             <Btn href="/" icon="arrow-right" class="mr-2">Try for free</Btn>
@@ -38,7 +38,18 @@
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    title: {
+      type: String,
+      default: 'A first-class messaging experience',
+    },
+    subtitle: {
+      type: String,
+      default: 'Power-up your user experience with great messaging features.',
+    },
+  },
+}
 </script>
 
 <style>

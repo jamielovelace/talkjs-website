@@ -15,12 +15,18 @@
         },
       ]"
       :style="{
-        left: img.posX + '%',
-        top: img.posY + '%',
-        width: img.size + '%',
+        left: (img.position_x || 0) + '%',
+        top: (img.position_y || 0) + '%',
+        width: (img.size || 100) + '%',
       }"
     >
-      <img
+      <ResponsiveImage
+        v-if="img.image"
+        :image="img.image"
+        :alt="img.image.alt"
+      />
+      <!-- <img
+        v-else
         class="max-w-full max-h-full w-auto"
         :data-loading="img.image.lqip"
         :data-srcset="
@@ -28,7 +34,7 @@
         "
         :data-src="img.image.url"
         :alt="img.image.alt"
-      />
+      /> -->
     </div>
   </div>
 </template>
