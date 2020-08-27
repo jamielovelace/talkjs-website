@@ -23,7 +23,7 @@
           </p>
         </div>
         <div class="flex-1 md:pl-8 mb-8">
-          <ImageGrid :images="images" />
+          <ImageGrid :images="images" anchor="footer" />
         </div>
       </div>
     </Container>

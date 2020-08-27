@@ -20,7 +20,7 @@
         :type="3"
         class="absolute top left-0 mt-12 -ml-20 text-grey-light w-screen-sm"
       />
-      <Container :id="$id('feature')" class="relative z-10">
+      <Container :id="'feature-' + $index" class="relative z-10">
         <FeatureBlock class="mb-20" :reverse="$index % 2 ? true : false">
           <template v-slot:content>
             <Feature :icon="item.primary.icon" icon-size="lg">
@@ -39,7 +39,11 @@
             <AnimationMessaging
               v-if="item.primary.preset_animation === 'messaging'"
             />
-            <ImageGrid v-else-if="item.items" :images="item.items" />
+            <ImageGrid
+              v-else-if="item.items"
+              :images="item.items"
+              :anchor="'feature-' + $index"
+            />
           </template>
         </FeatureBlock>
       </Container>

@@ -1,11 +1,11 @@
 <template>
-  <div :id="$id('image-grid')" class="relative" :class="gridSize">
+  <div :id="anchor" class="relative" :class="gridSize">
     <div
       v-for="(img, $childIndex) in images"
       :key="$id('image-grid-item') + $childIndex"
       v-lazy-container="{ selector: 'img' }"
       data-aos="fade-up"
-      :data-aos-anchor="$idRef('image-grid')"
+      :data-aos-anchor="anchor ? '#' + anchor : ''"
       :data-aos-delay="($childIndex + 1) * 150 + 100"
       class="absolute max-h-full"
       :class="[
@@ -49,6 +49,10 @@ export default {
     size: {
       type: String,
       default: 'large',
+    },
+    anchor: {
+      type: String,
+      default: '',
     },
   },
   computed: {
