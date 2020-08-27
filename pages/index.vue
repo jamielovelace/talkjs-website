@@ -49,10 +49,12 @@
           <div
             v-for="(example, $index) in document.examples"
             :key="$id($index + '-key')"
-            class="py-1 px-3 text-primary rounded-md mb-2 hover:bg-grey transition duration-100"
-            :class="{
-              'bg-primary text-white hover:bg-primary': selectedDocs === $index,
-            }"
+            class="py-1 px-3 text-primary rounded-md mb-2 transition duration-100 cursor-pointer"
+            :class="
+              selectedDocs === $index
+                ? 'bg-primary text-white hover:bg-primary'
+                : 'hover:bg-grey'
+            "
             @click="selectedDocs = $index"
             v-text="$prismic.asText(example.language)"
           ></div>
