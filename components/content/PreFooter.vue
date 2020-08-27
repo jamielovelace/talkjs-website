@@ -1,8 +1,12 @@
 <template>
   <div class="bg-primary pb-16 md:pb-24 mt-16 md:mt-24 relative text-white">
+    <Decorator
+      :type="2"
+      class="text-white opacity-25 max-w-sm absolute right-0 mr-40 mt-12"
+    />
     <Container>
       <Triangle />
-      <div class="-mt-4 md:-mt-8 md:-ml-8 md:flex items-center">
+      <div class="-mt-4 md:-mt-8 md:-ml-8 md:flex items-center relative z-10">
         <div class="flex-1 md:pl-8 mb-8">
           <h3 class="mt-12 font-bold text-4xl mb-2 leading-tight">
             {{ title }}

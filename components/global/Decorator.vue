@@ -2,6 +2,7 @@
   <div>
     <svg
       v-if="type === 1"
+      class="w-full h-auto"
       width="566"
       height="123"
       viewBox="0 0 566 123"
@@ -15,6 +16,7 @@
 
     <svg
       v-if="type === 2"
+      class="w-full h-auto"
       width="549"
       height="461"
       viewBox="0 0 549 461"
@@ -49,6 +51,7 @@
 
     <svg
       v-if="type === 3"
+      class="w-full h-auto"
       width="521"
       height="362"
       viewBox="0 0 521 362"
