@@ -45,11 +45,28 @@
         </template>
       </FeatureBlock>
       <div class="mt-6 flex overflow-hidden rounded-lg shadow-lg">
-        <div class="w-64 bg-grey-light"></div>
-        <div class="flex-1">
-          <Prism lang="js" height="400px">
-            console.log('test')
-          </Prism>
+        <div class="w-32 md:w-64 bg-grey-light flex-shrink-0 p-2 md:p-6">
+          <div
+            v-for="(example, $index) in document.examples"
+            :key="$id($index + '-key')"
+            class="py-1 px-3 text-primary rounded-md mb-2 hover:bg-grey transition duration-100"
+            :class="{
+              'bg-primary text-white hover:bg-primary': selectedDocs === $index,
+            }"
+            @click="selectedDocs = $index"
+            v-text="$prismic.asText(example.language)"
+          ></div>
+        </div>
+        <div class="flex-grow-1 overflow-x-auto">
+          <div
+            v-for="(example, $index) in document.examples"
+            v-show="selectedDocs === $index"
+            :key="$id($index + '-key')"
+          >
+            <Prism lang="js" height="400px">{{
+              $prismic.asText(example.code)
+            }}</Prism>
+          </div>
         </div>
       </div>
     </Container>
@@ -61,12 +78,15 @@
         And much more...
       </h2>
       <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-12">
-        <div v-for="feature in featuresMore" :key="feature.icon">
+        <div v-for="feature in document.features_more" :key="feature.icon">
           <svg-icon class="text-primary w-10 h-10" :name="feature.icon" />
           <h3 class="text-2xl text-dark font-bold mt-2 mb-2 leading-tight">
-            {{ feature.label }}
+            {{ $prismic.asText(feature.name) }}
           </h3>
-          <div class="prose md:prose-lg" v-html="feature.body"></div>
+          <prismic-rich-text
+            class="prose sm:prose-lg"
+            :field="feature.content"
+          />
         </div>
       </div>
     </Container>
@@ -93,145 +113,7 @@ export default {
   },
   data() {
     return {
-      featuresLarge: [
-        {
-          icon: 'chat-bubbles',
-          label: 'Real-time messaging',
-        },
-        {
-          icon: 'chatbox-ellipsis',
-          label: 'Chat pop-up',
-        },
-        {
-          icon: 'people',
-          label: 'Channels, groups & topics',
-        },
-        {
-          icon: 'mail-unread',
-          label: 'Email & SMS fallback',
-        },
-        {
-          icon: 'albums',
-          label: 'Full conversation history',
-        },
-        {
-          icon: 'palette',
-          label: 'Customizable design',
-        },
-      ],
-      featuresSmall: [
-        {
-          icon: 'phone',
-          label: 'Responsive cross-browser UX',
-        },
-        {
-          icon: 'time',
-          label: 'Activity history & dashboard',
-        },
-        {
-          icon: 'language',
-          label: 'Multi-Language User Interface',
-        },
-        {
-          icon: 'checkmark-done-all',
-          label: 'Read indicators',
-        },
-        {
-          icon: 'code',
-          label: 'Developer-friendly API',
-        },
-        {
-          icon: 'ellipsis',
-          label: 'Typing indicators',
-        },
-        {
-          icon: 'notification',
-          label: 'Desktop notifications',
-        },
-        {
-          icon: 'person',
-          label: 'Suppress contact information',
-        },
-        {
-          icon: 'chat-bubbles',
-          label: 'Unread messages badge',
-        },
-        {
-          icon: 'chatbox-ellipsis',
-          label: 'Widget',
-        },
-      ],
-      featuresMore: [
-        {
-          icon: 'chat-bubble-unread',
-          label: 'Badges',
-          body: `<p>Show a "you have new messages!" badge in your header with just a few lines of code.</p>`,
-        },
-        {
-          icon: 'notification',
-          label: 'Notifications',
-          body: `<p>Desktop notifications on new messages keep your users engaged even when they're not looking.</p>`,
-        },
-        {
-          icon: 'chatbox-ellipsis',
-          label: 'Widget',
-          body: `<p>TalkJS also ships with a pop-up widget, perfect for ecommerce sites. <strong><a href="#">It looks like this</a></strong></p>`,
-        },
-        {
-          icon: 'checkmark-done-all',
-          label: 'Read indicators',
-          body: `<p>Let your users know that a message has been delivered to our servers or read by the recipient.</p>`,
-        },
-        {
-          icon: 'ellipsis',
-          label: 'Typing indicators',
-          body: `<p>Real-time typing indicators help keep your users engaged.</p>`,
-        },
-        {
-          icon: 'person',
-          label: 'Suppress contact information',
-          body: `<p>Prevent users from exchanging email addresses, phone numbers and website addresses. Configure exceptions in detail.</p>`,
-        },
-      ],
-      preFooter: {
-        title: 'Ready to get started?',
-        body: `<p>Whether you're building a marketplace, on-demand business, e‑commerce, crowdfunding, travel and events platform, TalkJS is the chat tool for you.</p>`,
-        images: [
-          {
-            posX: 0,
-            posY: 0,
-            size: 55,
-            image: {
-              alt: 'face',
-              desktop: { url: require('@/assets/images/face.jpg') },
-              tablet: { url: require('@/assets/images/face.jpg') },
-              url: require('@/assets/images/face.jpg'),
-            },
-          },
-          {
-            posX: 15,
-            posY: 60,
-            size: 60,
-            image: {
-              alt: 'face',
-              desktop: { url: require('@/assets/images/face-3.jpg') },
-              tablet: { url: require('@/assets/images/face-3.jpg') },
-              url: require('@/assets/images/face-3.jpg'),
-            },
-          },
-          {
-            posX: 60,
-            posY: 20,
-            size: 40,
-            image: {
-              alt: 'face',
-              desktop: { url: require('@/assets/images/face-2.jpg') },
-              tablet: { url: require('@/assets/images/face-2.jpg') },
-              url: require('@/assets/images/face-2.jpg'),
-            },
-          },
-        ],
-      },
+      selectedDocs: 0,
     }
   },
 }

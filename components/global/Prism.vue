@@ -1,13 +1,11 @@
 <template>
-  <pre
-    class="block c-prism text-base"
-    :class="language"
-    :style="{ height: height }"
-  >
-    <code>
-      <slot />
-    </code>
-  </pre>
+  <div class="w-full">
+    <pre
+      class="block c-prism text-sm"
+      :class="language"
+      :style="{ height: height }"
+    ><code><slot /></code></pre>
+  </div>
 </template>
 
 <script>

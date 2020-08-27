@@ -1,6 +1,10 @@
 <template>
-  <div class="overflow-hidden w-full">
-    <div v-for="(item, $index) in features" :key="item.icon">
+  <div class="">
+    <div
+      v-for="(item, $index) in features"
+      :key="item.icon"
+      class="relative overflow-hidden w-full"
+    >
       <Decorator
         v-if="$index === 1"
         :type="1"
