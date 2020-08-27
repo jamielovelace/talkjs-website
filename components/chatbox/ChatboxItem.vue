@@ -1,7 +1,7 @@
 <template>
   <div class="mb-2">
     <div class="flex items-center" :class="{ 'pl-8': type === 'me' }">
-      <div v-if="avatar && type !== 'me'" class="flex-shrink-0 mr-2">
+      <div v-if="avatar && type !== 'me'" class="flex-shrink-0 mr-2 self-start">
         <img class="w-12 h-12 rounded-full" :src="avatar" />
       </div>
       <div class="flex" :class="type === 'me' ? 'ml-auto' : 'flex-grow-1'">
