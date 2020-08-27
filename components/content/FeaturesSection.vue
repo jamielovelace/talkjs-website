@@ -8,17 +8,17 @@
       <Decorator
         v-if="$index === 1"
         :type="1"
-        class="absolute top left-0 -ml-20 text-grey-light w-screen-sm"
+        class="absolute top left-0 -ml-20 text-grey-light sm:w-screen-sm md:w-screen-md lg:w-screen-lg"
       />
       <Decorator
         v-if="$index === 4"
         :type="2"
-        class="absolute top right-0 -mr-10 text-grey-light w-screen-sm"
+        class="absolute top right-0 -mr-10 text-grey-light sm:w-screen-sm md:w-screen-md lg:w-screen-lg"
       />
       <Decorator
         v-if="$index === 7"
         :type="3"
-        class="absolute top left-0 mt-12 -ml-20 text-grey-light w-screen-sm"
+        class="absolute top left-0 mt-12 -ml-20 text-grey-light sm:w-screen-sm md:w-screen-md lg:w-screen-lg"
       />
       <Container :id="'feature-' + $index" class="relative z-10">
         <FeatureBlock class="mb-20" :reverse="$index % 2 ? true : false">
