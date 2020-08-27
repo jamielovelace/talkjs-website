@@ -141,6 +141,8 @@ module.exports = {
         'data-aos=fade-left',
         'data-aos=fade-right',
         'data-aos^=fade',
+        'lazy="loading"',
+        'img'
       ],
       whitelistPatterns: [
         /-(leave|enter|appear)(|-(to|from|active))$/,

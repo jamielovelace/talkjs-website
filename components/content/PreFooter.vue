@@ -38,8 +38,8 @@ export default {
       default: '',
     },
     body: {
-      type: String,
-      default: '',
+      type: Array,
+      default: () => [],
     },
   },
 }
